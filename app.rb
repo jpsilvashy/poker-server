@@ -24,7 +24,7 @@ set :views, Proc.new { File.join(root, "app/views") }
 set :streams, []
 
 # Setup DataMapper
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3::memory:")
+DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_WHITE_URL'] || "sqlite3::memory:")
 
 # Models
 require_relative 'app/models/channel'
