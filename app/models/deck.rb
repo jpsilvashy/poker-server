@@ -1,12 +1,12 @@
 # This is a sample Deck implementation.
 class Deck
-  include DataMapper::Resource
+  # include DataMapper::Resource
 
-  property :id, Serial
-  property :name, String
-  property :created_at, DateTime
+  # property :id, Serial
+  # property :name, String
+  # property :created_at, DateTime
 
-  has n, :cards
+  # has n, :cards
 
   def initialize
     @cards = []
