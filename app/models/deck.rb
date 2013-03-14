@@ -1,5 +1,13 @@
 # This is a sample Deck implementation.
 class Deck
+  include DataMapper::Resource
+
+  property :id, Serial
+  property :name, String
+  property :created_at, DateTime
+
+  has n, :cards
+
   def initialize
     @cards = []
     Card::SUITS.each_byte do |suit|
