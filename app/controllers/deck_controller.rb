@@ -1,10 +1,18 @@
 get '/' do
-  content_type :json
-  settings.deck.cards.to_json
+  set :deck, Deck.new
+
+  random_name = [
+    Forgery::Name.female_first_name,
+    Forgery::Basic.color,
+    Forgery::Address.street_name.split(" ").first
+  ].join("-").downcase
+
+  redirect random_name
 end
 
 get '/:game' do
-  set :deck, Deck.new
+  content_type :json
+  settings.deck.cards.to_json
 end
 
 get '/:game/deal.json' do
