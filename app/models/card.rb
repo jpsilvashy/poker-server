@@ -1,4 +1,4 @@
-class Message
+class Card
   include DataMapper::Resource
 
   property :id, Serial

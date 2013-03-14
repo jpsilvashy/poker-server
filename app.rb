@@ -27,8 +27,8 @@ set :streams, []
 DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_WHITE_URL'] || "sqlite3::memory:")
 
 # Models
-require_relative 'app/models/channel'
-require_relative 'app/models/message'
+# require_relative 'app/models/channel'
+# require_relative 'app/models/message'
 require_relative 'app/models/deck'
 # require_relative 'app/models/card'
 
